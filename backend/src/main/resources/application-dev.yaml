@@ -10,4 +10,3 @@ spring:
   liquibase:
     contexts: dev
     change-log: classpath:db/dev/changelog.xml
-    enabled: true

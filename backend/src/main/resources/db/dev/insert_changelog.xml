@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <property name="now" value="now()" dbms="postgresql" />
+    <property name="tomorrow" value="now()+ INTERVAL '1 DAY'" dbms="postgresql" />
+    <property name="yesterday" value="now()- INTERVAL '1 DAY'" dbms="postgresql" />
+    <property name="1hourleft" value="now()+ INTERVAL '1 HOUR'" dbms="postgresql" />
 
     <changeSet dbms="postgresql" author="grzegorz.zajac" id="1">
 
@@ -24,6 +27,65 @@
             <column name="EMAIL" value="admin"/>
             <column name="PASSWORD" value="admin"/>
             <column name="ROLE_ID" valueComputed="(select ID from ROLE where name = 'ADMIN')"/>
+        </insert>
+    </changeSet>
+    <changeSet dbms="postgresql" author="grzegorz.zajac" id="2">
+        <insert tableName="TOKEN">
+            <column name="ID" valueComputed="nextval('token_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="VALID_DATE" valueComputed="${tomorrow}"/>
+            <column name="VALUE" value="token1"/>
+        </insert>
+        <insert tableName="TOKEN">
+            <column name="ID" valueComputed="nextval('token_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="VALID_DATE" valueComputed="${tomorrow}"/>
+            <column name="VALUE" value="token2"/>
+        </insert>
+        <insert tableName="TOKEN">
+            <column name="ID" valueComputed="nextval('token_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="VALID_DATE" valueComputed="${1hourleft}"/>
+            <column name="VALUE" value="token3"/>
+        </insert>
+        <insert tableName="CANDIDATE">
+            <column name="ID" valueComputed="nextval('candidate_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="FULL_NAME" value="Grzegorz Zajac"/>
+            <column name="EMAIL" value="gz@wp.pl"/>
+            <column name="TOKEN_ID" valueComputed="(select ID from TOKEN where value = 'token1')"/>
+        </insert>
+        <insert tableName="CANDIDATE">
+            <column name="ID" valueComputed="nextval('candidate_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="FULL_NAME" value="Radoslaw Pawlaczyk"/>
+            <column name="EMAIL" value="rp@wp.pl"/>
+        </insert>
+        <insert tableName="CANDIDATE">
+            <column name="ID" valueComputed="nextval('candidate_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="FULL_NAME" value="Pan Pawel"/>
+            <column name="EMAIL" value="pan_pawel@wp.pl"/>
+        </insert>
+        <insert tableName="CANDIDATE">
+            <column name="ID" valueComputed="nextval('candidate_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="FULL_NAME" value="Jakub Malowie"/>
+            <column name="EMAIL" value="jakub@wp.pl"/>
+        </insert>
+        <insert tableName="CANDIDATE">
+            <column name="ID" valueComputed="nextval('candidate_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="FULL_NAME" value="Karol Mocny"/>
+            <column name="EMAIL" value="km@wp.pl"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
