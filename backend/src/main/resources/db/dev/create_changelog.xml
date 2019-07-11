@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet dbms="postgresql" author="grzegorz.zajac" id="1">
+        <createTable tableName="ROLE">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME" type="varchar(60)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="ENTITY_CREATED" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="ENTITY_UPDATED" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+        <createTable tableName="USERS">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="FULL_NAME" type="varchar(60)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="EMAIL" type="varchar(60)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="PASSWORD" type="varchar(60)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="ROLE_ID" type="bigint">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="ENTITY_CREATED" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="ENTITY_UPDATED" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="ROLE_ID"
+                                 baseTableName="USERS" baseTableSchemaName="public"
+                                 constraintName="fk_user_role_id" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="ID" referencedTableName="ROLE"
+                                 referencedTableSchemaName="public" referencesUniqueColumn="false" />
+    </changeSet>
+</databaseChangeLog>
