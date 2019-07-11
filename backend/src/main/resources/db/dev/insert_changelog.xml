@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <property name="now" value="now()" dbms="postgresql" />
+
+    <changeSet dbms="postgresql" author="grzegorz.zajac" id="1">
+
+        <insert tableName="ROLE">
+            <column name="ID" valueComputed="nextval('role_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="NAME" value="ADMIN"/>
+        </insert>
+        <insert tableName="ROLE">
+            <column name="ID" valueComputed="nextval('role_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="NAME" value="OPERATOR"/>
+        </insert>
+        <insert tableName="USERS">
+            <column name="ID" valueComputed="nextval('users_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="FULL_NAME" value="admin"/>
+            <column name="EMAIL" value="admin"/>
+            <column name="PASSWORD" value="admin"/>
+            <column name="ROLE_ID" valueComputed="(select ID from ROLE where name = 'ADMIN')"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

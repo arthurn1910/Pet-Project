@@ -1,0 +1,13 @@
+# Application Properties
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pet
+    username: pet
+    password: pet
+  jpa:
+    show-sql: true
+    generate-ddl: false
+  liquibase:
+    contexts: dev
+    change-log: classpath:db/dev/changelog.xml
+    enabled: true
