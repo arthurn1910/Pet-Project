@@ -1,6 +1,5 @@
 package com.billennium.petproject.model;
 
-
 import org.hibernate.annotations.OptimisticLock;
 import org.hibernate.annotations.UpdateTimestamp;
 

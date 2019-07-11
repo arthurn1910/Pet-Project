@@ -1,5 +1,7 @@
 package com.billennium.petproject.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,6 +25,7 @@ public class UserEntity extends BaseEntity{
     @Column(name = "FULL_NAME", nullable = false, length = 60)
     private String fullName;
 
+    @JsonIgnore
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
