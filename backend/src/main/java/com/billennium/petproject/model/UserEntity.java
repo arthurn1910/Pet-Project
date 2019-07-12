@@ -1,6 +1,6 @@
 package com.billennium.petproject.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "USERS")
@@ -32,11 +34,11 @@ public class UserEntity extends BaseEntity{
     @Column(name = "EMAIL", nullable = false, length = 60, unique = true)
     private String email;
 
-    @ManyToOne(optional = true)
+    @ManyToMany()
     @JoinColumn(name = "ROLE_ID")
-    private RoleEntity role;
+    private List<RoleEntity> roles;
 
-    public Long getId() {
+    Long getId() {
         return id;
     }
 
@@ -44,7 +46,7 @@ public class UserEntity extends BaseEntity{
         this.id = id;
     }
 
-    public String getFullName() {
+    String getFullName() {
         return fullName;
     }
 
@@ -52,7 +54,7 @@ public class UserEntity extends BaseEntity{
         this.fullName = fullName;
     }
 
-    public String getPassword() {
+    String getPassword() {
         return password;
     }
 
@@ -68,11 +70,11 @@ public class UserEntity extends BaseEntity{
         this.email = email;
     }
 
-    public RoleEntity getRole() {
-        return role;
+    List<RoleEntity> getRoles() {
+        return roles;
     }
 
-    public void setRole(RoleEntity role) {
-        this.role = role;
+    public void setRoles(List<RoleEntity> roles) {
+        this.roles = roles;
     }
 }
