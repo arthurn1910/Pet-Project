@@ -1,6 +1,6 @@
 package com.billennium.petproject.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "USERS")
@@ -35,16 +36,15 @@ public class UserEntity extends BaseEntity {
     @Column(name = "EMAIL", nullable = false, length = 60, unique = true)
     private String email;
 
-
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "USERS_ROLE",
-            joinColumns = @JoinColumn(name = "USER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
+        joinColumns = @JoinColumn(name = "USER_ID"),
+        inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
     )
     @JoinColumn(name = "ROLE_ID")
     private List<RoleEntity> roles;
 
-    public Long getId() {
+    Long getId() {
         return id;
     }
 
@@ -52,7 +52,7 @@ public class UserEntity extends BaseEntity {
         this.id = id;
     }
 
-    public String getFullName() {
+    String getFullName() {
         return fullName;
     }
 
@@ -60,7 +60,7 @@ public class UserEntity extends BaseEntity {
         this.fullName = fullName;
     }
 
-    public String getPassword() {
+    String getPassword() {
         return password;
     }
 
@@ -76,7 +76,7 @@ public class UserEntity extends BaseEntity {
         this.email = email;
     }
 
-    public List<RoleEntity> getRoles() {
+    List<RoleEntity> getRoles() {
         return roles;
     }
 
