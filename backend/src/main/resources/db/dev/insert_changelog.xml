@@ -26,6 +26,10 @@
             <column name="FULL_NAME" value="admin"/>
             <column name="EMAIL" value="admin"/>
             <column name="PASSWORD" value="admin"/>
+        </insert>
+        <insert tableName="USERS_ROLE">
+            <column name="ID" valueComputed="nextval('users_role_id_seq')"/>
+            <column name="USER_ID" valueComputed="(select ID from USERS where email = 'admin')"/>
             <column name="ROLE_ID" valueComputed="(select ID from ROLE where name = 'ADMIN')"/>
         </insert>
     </changeSet>
