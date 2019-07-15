@@ -41,7 +41,6 @@ public class UserEntity extends BaseEntity {
         joinColumns = @JoinColumn(name = "USER_ID"),
         inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
     )
-    @JoinColumn(name = "ROLE_ID")
     private List<RoleEntity> roles;
 
     Long getId() {
