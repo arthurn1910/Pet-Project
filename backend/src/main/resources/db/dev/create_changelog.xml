@@ -229,5 +229,37 @@
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="ID" referencedTableName="QUESTION"
                                  referencedTableSchemaName="public" referencesUniqueColumn="false" />
+        <createTable tableName="TEST_ANSWER">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="CONTENT" type="varchar(200)">
+                <constraints nullable="true"></constraints>
+            </column>
+            <column name="TEST_ID" type="bigint">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="ANSWER_ID" type="bigint">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="ENTITY_CREATED" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="ENTITY_UPDATED" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="TEST_ID"
+                                 baseTableName="TEST_ANSWER" baseTableSchemaName="public"
+                                 constraintName="fk_test_test_answer_id" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="ID" referencedTableName="TEST"
+                                 referencedTableSchemaName="public" referencesUniqueColumn="false" />
+        <addForeignKeyConstraint baseColumnNames="ANSWER_ID"
+                                 baseTableName="TEST_ANSWER" baseTableSchemaName="public"
+                                 constraintName="fk_answer_test_answer_id" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="ID" referencedTableName="ANSWER"
+                                 referencedTableSchemaName="public" referencesUniqueColumn="false" />
     </changeSet>
 </databaseChangeLog>

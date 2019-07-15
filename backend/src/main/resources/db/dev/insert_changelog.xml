@@ -92,4 +92,1048 @@
             <column name="EMAIL" value="km@wp.pl"/>
         </insert>
     </changeSet>
+    <changeSet dbms="postgresql" author="grzegorz.zajac" id="3">
+        <insert tableName="TEST">
+            <column name="ID" valueComputed="nextval('test_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="STATUS" value="Open"/>
+            <column name="CANDIDATE_ID" valueComputed="(select ID from CANDIDATE where email = 'gz@wp.pl')"/>
+        </insert>
+        <insert tableName="TEST">
+            <column name="ID" valueComputed="nextval('test_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="STATUS" value="Closed"/>
+            <column name="CANDIDATE_ID" valueComputed="(select ID from CANDIDATE where email = 'rp@wp.pl')"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+1=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+2=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="What is the meaning of life?"/>
+            <column name="IS_OPEN" value="true"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+3=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+4=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+5=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+6=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+7=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+8=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+9=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+10=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+11=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+12=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+13=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+14=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+15=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+16=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2+17=?"/>
+            <column name="IS_OPEN" value="false"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="What is infinity?"/>
+            <column name="IS_OPEN" value="true"/>
+        </insert>
+        <insert tableName="QUESTION">
+            <column name="ID" valueComputed="nextval('question_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="Where lies the boundary of human strength?"/>
+            <column name="IS_OPEN" value="true"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+1=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+2=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+3=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+4=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+5=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+6=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+7=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+8=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+9=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Open')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'What is the meaning of life?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+10=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+11=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+12=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+13=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+14=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+15=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+16=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+17=?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'What is infinity?')"/>
+        </insert>
+        <insert tableName="TEST_QUESTION">
+            <column name="ID" valueComputed="nextval('test_question_id_seq')"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'Where lies the boundary of human strength?')"/>
+        </insert>
+    </changeSet>
+    <changeSet dbms="postgresql" author="grzegorz.zajac" id="4">
+        <insert tableName="CATEGORY">
+            <column name="ID" valueComputed="nextval('category_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="NAME" value="math"/>
+        </insert>
+        <insert tableName="CATEGORY">
+            <column name="ID" valueComputed="nextval('category_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="NAME" value="life"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+1=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+2=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+3=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+4=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+5=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+6=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+7=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+8=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+9=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+10=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+11=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+12=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+13=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+14=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+15=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+16=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+17=?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'math')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'What is infinity?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'life')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'What is infinity?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'life')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'Where lies the boundary of human strength?')"/>
+        </insert>
+        <insert tableName="QUESTION_CATEGORY">
+            <column name="ID" valueComputed="nextval('question_category_id_seq')"/>
+            <column name="CATEGORY_ID" valueComputed="(select ID from CATEGORY where name = 'life')"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'What is the meaning of life?')"/>
+        </insert>
+    </changeSet>
+    <changeSet dbms="postgresql" author="grzegorz.zajac" id="5">
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+1=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+1=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+1=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="3"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+1=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+2=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+2=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+2=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="4"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+2=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+3=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+3=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+3=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="5"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+3=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+4=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+4=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+4=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="6"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+4=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+5=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+5=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+5=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="7"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+5=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+6=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+6=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+6=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="8"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+6=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+7=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+7=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+7=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="9"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+7=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+8=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+8=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+8=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="10"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+8=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+9=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+9=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+9=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="11"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+9=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+        <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+        <column name="ENTITY_CREATED" valueComputed="${now}"/>
+        <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+        <column name="CONTENT" value="0"/>
+        <column name="IS_CORRECT" value="false"/>
+        <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+10=?')"/>
+    </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+10=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+10=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="12"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+10=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+11=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+11=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+11=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="13"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+11=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+12=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+12=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+12=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="14"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+12=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+13=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+13=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+13=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="15"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+13=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+14=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+14=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+14=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="16"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+14=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+15=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+15=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+15=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="17"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+15=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+16=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+16=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+16=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="18"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+16=?')"/>
+        </insert>
+
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="0"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+17=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="1"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+17=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="2"/>
+            <column name="IS_CORRECT" value="false"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+17=?')"/>
+        </insert>
+        <!--open answers-->
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="19"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = '2+17=?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="42"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'What is the meaning of life?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="the frontier of the human mind"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'What is infinity?')"/>
+        </insert>
+        <insert tableName="ANSWER">
+            <column name="ID" valueComputed="nextval('answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="orange"/>
+            <column name="IS_CORRECT" value="true"/>
+            <column name="QUESTION_ID" valueComputed="(select ID from QUESTION where content = 'Where lies the boundary of human strength?')"/>
+        </insert>
+    </changeSet>
+    <changeSet dbms="postgresql" author="grzegorz.zajac" id="6">
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value=""/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='2+1=?') and is_correct = false limit 1)"/>
+        </insert>
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value=""/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='2+2=?') and is_correct = false limit 1)"/>
+        </insert>
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value=""/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='2+3=?') and is_correct = true limit 1)"/>
+        </insert>
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value=""/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='2+4=?') and is_correct = true limit 1)"/>
+        </insert>
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value=""/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='2+5=?') and is_correct = true limit 1)"/>
+        </insert>
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value=""/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='2+6=?') and is_correct = true limit 1)"/>
+        </insert>
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value=""/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='2+7=?') and is_correct = true limit 1)"/>
+        </insert>
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value=""/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='2+8=?') and is_correct = true limit 1)"/>
+        </insert>
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value=""/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='2+9=?') and is_correct = true limit 1)"/>
+        </insert>
+        <insert tableName="TEST_ANSWER">
+            <column name="ID" valueComputed="nextval('test_answer_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="CONTENT" value="i think it is the number 42"/>
+            <column name="TEST_ID" valueComputed="(select ID from TEST where status = 'Closed')"/>
+            <column name="ANSWER_ID" valueComputed="(select id from answer where question_id = (select id from question where content ='What is the meaning of life?') and is_correct = true limit 1)"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
