@@ -25,7 +25,7 @@
             <column name="ENTITY_UPDATED" valueComputed="${now}"/>
             <column name="FULL_NAME" value="admin"/>
             <column name="EMAIL" value="admin"/>
-            <column name="PASSWORD" value="admin"/>
+            <column name="PASSWORD" value="$2a$10$eu/6Flnc//MIqKyczA1D0OaPMr2meo0vNT3uHJw1vt7ji05BNZqoG"/>
         </insert>
         <insert tableName="USERS_ROLE">
             <column name="ID" valueComputed="nextval('users_role_id_seq')"/>

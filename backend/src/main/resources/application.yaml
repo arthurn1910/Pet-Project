@@ -14,3 +14,7 @@ spring:
 ## Server Properties
 server:
   port: 8080
+
+app:
+  jwtSecretKey: 'Ra7$3GP1).$5a@for4LpW&/ZWAt>i8UJC9X%b}lpD:GtYMcEt?PcMkh%,PLRL7$'
+  jwtExpirationTime: 86400
