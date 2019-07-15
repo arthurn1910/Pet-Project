@@ -1,6 +1,5 @@
 package com.billennium.petproject.security;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.billennium.petproject.security.jwt.JwtAuthEntryPoint;
 import com.billennium.petproject.security.jwt.JwtAuthTokenFilter;
 import com.billennium.petproject.security.jwt.JwtProvider;
-import com.billennium.petproject.service.impl.UserServiceImpl;
+import com.billennium.petproject.service.UserService;
 
 @Configuration
 @EnableWebSecurity
@@ -26,11 +25,11 @@ import com.billennium.petproject.service.impl.UserServiceImpl;
 )
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserServiceImpl userService;
+    private final UserService userService;
 
     private final JwtAuthEntryPoint unauthorizedHandler;
 
-    public SecurityConfig(@Qualifier("userServiceImpl") UserServiceImpl userService, JwtAuthEntryPoint unauthorizedHandler) {
+    public SecurityConfig(UserService userService, JwtAuthEntryPoint unauthorizedHandler) {
         this.userService = userService;
         this.unauthorizedHandler = unauthorizedHandler;
     }

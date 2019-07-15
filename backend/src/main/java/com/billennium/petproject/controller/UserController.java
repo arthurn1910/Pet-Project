@@ -9,21 +9,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.billennium.petproject.model.UserEntity;
-import com.billennium.petproject.service.impl.UserServiceImpl;
+import com.billennium.petproject.service.UserService;
 
 @RestController
 @RequestMapping("user")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class UserController {
 
-    public UserController(UserServiceImpl userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
-    private final UserServiceImpl userService;
+    private final UserService userService;
 
     @GetMapping("email/{email}")
-    public ResponseEntity<UserEntity> userByEmail(@PathVariable String email) {
+    public ResponseEntity userByEmail(@PathVariable String email) {
         UserEntity user = userService.getUserByEmail(email);
         return new ResponseEntity(user, HttpStatus.OK);
     }

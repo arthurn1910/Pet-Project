@@ -1,15 +1,15 @@
 package com.billennium.petproject.service.impl;
 
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import com.billennium.petproject.model.UserEntity;
 import com.billennium.petproject.model.UserPrinciple;
 import com.billennium.petproject.repository.UserRepository;
+import com.billennium.petproject.service.UserService;
 
 @Service
-public class UserServiceImpl implements UserDetailsService {
+public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.billennium.petproject.model.UserEntity;
 import com.billennium.petproject.model.UserPrinciple;
-import com.billennium.petproject.service.impl.UserServiceImpl;
+import com.billennium.petproject.service.UserService;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -30,9 +30,9 @@ public class JwtProvider {
     @Value("${app.jwtExpirationTime}")
     private int jwtExpirationTime;
 
-    private final UserServiceImpl userService;
+    private final UserService userService;
 
-    public JwtProvider(UserServiceImpl userService) {
+    public JwtProvider(UserService userService) {
         this.userService = userService;
     }
 
