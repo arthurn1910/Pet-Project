@@ -171,7 +171,9 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="NAME" type="varchar(60)">
-                <constraints nullable="false"></constraints>
+                <constraints nullable="false"
+                             unique="true"
+                             uniqueConstraintName="category_name"/>
             </column>
             <column name="ENTITY_CREATED" type="TIMESTAMP WITH TIME ZONE">
                 <constraints nullable="false"></constraints>
