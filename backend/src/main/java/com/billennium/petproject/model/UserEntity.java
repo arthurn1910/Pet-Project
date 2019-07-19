@@ -75,7 +75,7 @@ public class UserEntity extends BaseEntity {
         this.email = email;
     }
 
-    List<RoleEntity> getRoles() {
+    public List<RoleEntity> getRoles() {
         return roles;
     }
 
