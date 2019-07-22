@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public JwtAuthTokenFilter authenticationJwtTokenFilter() {
-        return new JwtAuthTokenFilter(new JwtProvider(userService), userService);
+        return new JwtAuthTokenFilter(new JwtProvider(), userService);
     }
 
     @Override
