@@ -1,15 +1,15 @@
 package com.billennium.petproject.security.jwt;
 
 import java.util.Date;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
-import com.billennium.petproject.model.UserEntity;
 import com.billennium.petproject.model.UserPrinciple;
-import com.billennium.petproject.service.UserService;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -25,20 +25,18 @@ public class JwtProvider {
 
     private String jwtSecretKey = "Ra7$3GP1).$5a@for4LpW&/ZWAt>i8UJC9X%b}lpD:GtYMcEt?PcMkh%,PLRL7$";
 
-    private final UserService userService;
-
-    public JwtProvider(UserService userService) {
-        this.userService = userService;
-    }
-
     public String generateJwtToken(Authentication authentication) {
 
         UserPrinciple userPrinciple = (UserPrinciple) authentication.getPrincipal();
-        UserEntity user = userService.getUserByEmail(userPrinciple.getEmail());
+        final String authorities = authentication.getAuthorities().stream()
+            .map(GrantedAuthority::getAuthority)
+            .collect(Collectors.joining(","));
 
         int jwtExpirationTime = 86400;
         return Jwts.builder()
-            .setSubject((user.getEmail()))
+            .setSubject(userPrinciple.getEmail())
+            .claim("autorities", authorities)
+            .claim("name", userPrinciple.getName())
             .setIssuedAt(new Date())
             .setExpiration(new Date((new Date()).getTime() + jwtExpirationTime * 1000))
             .signWith(SignatureAlgorithm.HS512, jwtSecretKey)
