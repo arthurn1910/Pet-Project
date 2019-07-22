@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
@@ -24,11 +23,7 @@ public class JwtProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
-    @Value("${app.jwtSecretKey}")
-    private String jwtSecretKey;
-
-    @Value("${app.jwtExpirationTime}")
-    private int jwtExpirationTime;
+    private String jwtSecretKey = "Ra7$3GP1).$5a@for4LpW&/ZWAt>i8UJC9X%b}lpD:GtYMcEt?PcMkh%,PLRL7$";
 
     private final UserService userService;
 
@@ -41,6 +36,7 @@ public class JwtProvider {
         UserPrinciple userPrinciple = (UserPrinciple) authentication.getPrincipal();
         UserEntity user = userService.getUserByEmail(userPrinciple.getEmail());
 
+        int jwtExpirationTime = 86400;
         return Jwts.builder()
             .setSubject((user.getEmail()))
             .setIssuedAt(new Date())
