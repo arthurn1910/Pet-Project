@@ -1,39 +1,35 @@
 package com.billennium.petproject.model;
 
-import org.hibernate.annotations.OptimisticLock;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.util.Date;
 
-import static com.billennium.petproject.util.DateTimeUtils.now;
+import static javax.persistence.GenerationType.IDENTITY;
+import static javax.persistence.TemporalType.TIMESTAMP;
 
 @MappedSuperclass
 public abstract class BaseEntity {
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "ENTITY_CREATED", nullable = false)
-    @OptimisticLock(excluded = true)
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "ID")
+    private Long id;
+
+    @Temporal(TIMESTAMP)
+    @Column(name = "ENTITY_CREATED", updatable = false)
+    @CreationTimestamp
     private Date created;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "ENTITY_UPDATED", nullable = false)
-    @OptimisticLock(excluded = true)
+    @Temporal(TIMESTAMP)
+    @Column(name = "ENTITY_UPDATED")
     @UpdateTimestamp
     private Date updated;
-
-    public BaseEntity() {
-        created = now();
-        updated = created;
-    }
-
-    protected BaseEntity(Date createdOn) {
-        this.created = createdOn;
-        this.updated = createdOn;
-    }
 
     public Date getCreated() {
         return created;
@@ -49,5 +45,13 @@ public abstract class BaseEntity {
 
     public void setUpdated(Date updatedDate) {
         updated = updatedDate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
