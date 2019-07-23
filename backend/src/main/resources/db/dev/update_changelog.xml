@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
-    <include file="db/dev/create_changelog.xml"/>
-    <include file="db/dev/insert_changelog.xml"/>
-    <include file="db/dev/update_changelog.xml"/>
+
+    <changeSet dbms="postgresql" author="grzegorz.zajac" id="1">
+        <update tableName="TOKEN">
+            <column name="CANDIDATE_ID" valueComputed="(select ID from CANDIDATE where email = 'gz@wp.pl')"/>
+            <where>VALUE = 'token1'</where>
+        </update>
+    </changeSet>
 </databaseChangeLog>
