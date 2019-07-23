@@ -60,6 +60,9 @@
             <column name="VALID_DATE" type="TIMESTAMP WITH TIME ZONE">
                 <constraints nullable="false"></constraints>
             </column>
+            <column name="CANDIDATE_ID" type="bigint">
+                <constraints nullable="true"></constraints>
+            </column>
             <column name="ENTITY_CREATED" type="TIMESTAMP WITH TIME ZONE"/>
             <column name="ENTITY_UPDATED" type="TIMESTAMP WITH TIME ZONE"/>
         </createTable>
@@ -71,7 +74,7 @@
                 <constraints nullable="false"></constraints>
             </column>
             <column name="EMAIL" type="varchar(60)">
-                <constraints nullable="true"></constraints>
+                <constraints nullable="false"></constraints>
             </column>
             <column name="TOKEN_ID" type="bigint">
                 <constraints nullable="true"></constraints>
@@ -84,6 +87,12 @@
                                  constraintName="fk_candidate_token_id" deferrable="false"
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="ID" referencedTableName="TOKEN"
+                                 referencedTableSchemaName="public" referencesUniqueColumn="false" />
+        <addForeignKeyConstraint baseColumnNames="CANDIDATE_ID"
+                                 baseTableName="TOKEN" baseTableSchemaName="public"
+                                 constraintName="fk_token_candidate_id" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="ID" referencedTableName="CANDIDATE"
                                  referencedTableSchemaName="public" referencesUniqueColumn="false" />
     </changeSet>
     <changeSet id="2" author="grzegorz.zajac" dbms="postgresql">
