@@ -35,6 +35,9 @@ public class QuestionEntity extends BaseEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
     private List<AnswerEntity> answers;
 
+    @ManyToMany(mappedBy = "questions")
+    private List<TestEntity> tests;
+
     public String getContent() {
         return content;
     }
@@ -65,5 +68,13 @@ public class QuestionEntity extends BaseEntity {
 
     public void setAnswers(List<AnswerEntity> answers) {
         this.answers = answers;
+    }
+
+    public List<TestEntity> getTests() {
+        return tests;
+    }
+
+    public void setTests(List<TestEntity> tests) {
+        this.tests = tests;
     }
 }
