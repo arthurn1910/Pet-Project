@@ -14,14 +14,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.info = {
-      token: this.token.getToken(),
-      username: this.token.getEmail(),
+      token: TokenStorageService.getToken(),
+      username: TokenStorageService.getEmail(),
       authorities: this.token.getAuthorities()
     };
   }
 
   logout() {
-    this.token.signOut();
+    TokenStorageService.signOut();
     window.location.reload();
   }
 }

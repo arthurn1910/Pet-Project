@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit() {
-    if (this.tokenStorage.getToken()) {
+    if (TokenStorageService.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
     }

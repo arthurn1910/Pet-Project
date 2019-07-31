@@ -14,16 +14,14 @@ export class AppComponent implements OnInit {
   constructor(private tokenStorage: TokenStorageService) { }
 
   ngOnInit() {
-    if (this.tokenStorage.getToken()) {
+    if (TokenStorageService.getToken()) {
       this.roles = this.tokenStorage.getAuthorities();
-      this.roles.every(role => {
-        if (role === 'ADMIN') {
+        if (this.roles.includes('ADMIN')) {
           this.authority = 'ADMIN';
           return false;
         }
-        this.authority = 'user';
+        this.authority = 'OPERATOR';
         return true;
-      });
     }
   }
 }
