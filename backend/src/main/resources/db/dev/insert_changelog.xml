@@ -27,10 +27,23 @@
             <column name="EMAIL" value="admin"/>
             <column name="PASSWORD" value="$2a$10$eu/6Flnc//MIqKyczA1D0OaPMr2meo0vNT3uHJw1vt7ji05BNZqoG"/>
         </insert>
+        <insert tableName="USERS">
+            <column name="ID" valueComputed="nextval('users_id_seq')"/>
+            <column name="ENTITY_CREATED" valueComputed="${now}"/>
+            <column name="ENTITY_UPDATED" valueComputed="${now}"/>
+            <column name="FULL_NAME" value="operator"/>
+            <column name="EMAIL" value="operator"/>
+            <column name="PASSWORD" value="$2a$10$eu/6Flnc//MIqKyczA1D0OaPMr2meo0vNT3uHJw1vt7ji05BNZqoG"/>
+        </insert>
         <insert tableName="USERS_ROLE">
             <column name="ID" valueComputed="nextval('users_role_id_seq')"/>
             <column name="USER_ID" valueComputed="(select ID from USERS where email = 'admin')"/>
             <column name="ROLE_ID" valueComputed="(select ID from ROLE where name = 'ADMIN')"/>
+        </insert>
+        <insert tableName="USERS_ROLE">
+            <column name="ID" valueComputed="nextval('users_role_id_seq')"/>
+            <column name="USER_ID" valueComputed="(select ID from USERS where email = 'operator')"/>
+            <column name="ROLE_ID" valueComputed="(select ID from ROLE where name = 'OPERATOR')"/>
         </insert>
     </changeSet>
     <changeSet dbms="postgresql" author="grzegorz.zajac" id="2">
