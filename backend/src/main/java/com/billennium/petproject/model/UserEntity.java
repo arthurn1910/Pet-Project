@@ -2,13 +2,7 @@ package com.billennium.petproject.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -31,6 +25,17 @@ public class UserEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
     )
     private List<RoleEntity> roles;
+
+    public UserEntity() {
+    }
+
+    public UserEntity(RegisterForm registerForm, String encode, List<RoleEntity> roles) {
+        super();
+        fullName = registerForm.getName();
+        password = encode;
+        email = registerForm.getEmail();
+        this.roles = roles;
+    }
 
     String getFullName() {
         return fullName;
@@ -67,9 +72,9 @@ public class UserEntity extends BaseEntity {
     @Override
     public String toString() {
         return "UserEntity{" +
-            "fullName='" + fullName + '\'' +
-            ", email='" + email + '\'' +
-            ", roles=" + roles +
-            '}';
+                "fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", roles=" + roles +
+                '}';
     }
 }

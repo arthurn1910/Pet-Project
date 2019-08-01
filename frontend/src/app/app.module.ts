@@ -6,7 +6,6 @@ import {FormsModule} from '@angular/forms';
 import {MatTableModule} from "@angular/material";
 import {MatSortModule} from '@angular/material/sort';
 
-
 import {AppComponent} from './app.component';
 import {LoginComponent} from "./login/LoginComponent";
 import {HomeComponent} from "./home/HomeComponent";
@@ -14,9 +13,9 @@ import {UserComponent} from "./user/UserComponent";
 import {AdminComponent} from "./admin/AdminComponent";
 import {httpInterceptorProviders} from "./auth/AuthInterceptor";
 import {AccountComponent} from "./account/AccountComponent";
-import {OperatorComponent} from "./admin/operator/operatorComponent";
 import {TestComponent} from "./user/tests/TestComponent";
 import {MaterialModule} from "./MaterialModule";
+import {CreateOperatorComponent} from "./admin/operator/createOperatorComponent";
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import {MaterialModule} from "./MaterialModule";
     HomeComponent,
     AdminComponent,
     AccountComponent,
-    OperatorComponent,
+    CreateOperatorComponent,
     TestComponent
   ],
   imports: [

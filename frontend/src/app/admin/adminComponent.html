@@ -1,3 +1,8 @@
+<div class="button-create-operator">
+  <button mat-button (click)="addOperator()">
+    <a href="createAccount" mat-menu-item>Add New Operator</a>
+  </button>
+</div>
 <div class="example-container mat-elevation-z8">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
@@ -5,17 +10,17 @@
 
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <th mat-header-cell *matHeaderCellDef> Id</th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="login">
-      <th mat-header-cell *matHeaderCellDef> Login </th>
+      <th mat-header-cell *matHeaderCellDef> Login</th>
       <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
 
     <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <th mat-header-cell *matHeaderCellDef> Action</th>
       <button mat-button *matCellDef="let element" (click)="removeOperator(element.id)">Remove</button>
     </ng-container>
 
