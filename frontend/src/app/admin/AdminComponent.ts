@@ -9,13 +9,14 @@ import {UserService} from "../services/UserService";
   templateUrl: './adminComponent.html',
   styleUrls: ['./adminComponent.css']
 })
-export class AdminComponent implements OnInit{
+export class AdminComponent implements OnInit {
   displayedColumns: string[] = ['id', 'login', 'action'];
   dataSource: MatTableDataSource<unknown> = new MatTableDataSource();
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit() {
     this.userService.getOperators().subscribe(
