@@ -10,4 +10,6 @@ public interface UserService extends UserDetailsService {
     UserEntity getUserByEmail(String email);
 
     List<UserEntity> getUsersByRole(String roleName);
+
+    void removeUser(Long id);
 }

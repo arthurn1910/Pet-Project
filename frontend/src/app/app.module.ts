@@ -1,11 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { MatTableModule } from "@angular/material";
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {MatTableModule} from "@angular/material";
+import {MatSortModule} from '@angular/material/sort';
 
-import { AppComponent } from './app.component';
+
+import {AppComponent} from './app.component';
 import {LoginComponent} from "./login/LoginComponent";
 import {HomeComponent} from "./home/HomeComponent";
 import {UserComponent} from "./user/UserComponent";
@@ -14,7 +16,7 @@ import {httpInterceptorProviders} from "./auth/AuthInterceptor";
 import {AccountComponent} from "./account/AccountComponent";
 import {OperatorComponent} from "./admin/operator/operatorComponent";
 import {TestComponent} from "./user/tests/TestComponent";
-
+import {MaterialModule} from "./MaterialModule";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {TestComponent} from "./user/tests/TestComponent";
     AppRoutingModule,
     FormsModule,
     MatTableModule,
-    HttpClientModule
+    MaterialModule,
+    HttpClientModule,
+    MatSortModule
   ],
   exports: [
     MatTableModule
@@ -40,4 +44,5 @@ import {TestComponent} from "./user/tests/TestComponent";
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -2,16 +2,14 @@ package com.billennium.petproject.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.billennium.petproject.model.UserEntity;
 import com.billennium.petproject.service.UserService;
 
 import java.util.List;
+
+import static java.lang.Long.parseLong;
 
 @RestController
 @RequestMapping("user")
@@ -34,5 +32,11 @@ public class UserController {
     public ResponseEntity getOperators() {
         List<UserEntity> users = userService.getUsersByRole("OPERATOR");
         return new ResponseEntity(users, HttpStatus.OK);
+    }
+
+    @DeleteMapping("remove/{id}")
+    public ResponseEntity removeUser(@PathVariable String id) {
+        userService.removeUser(parseLong(id));
+        return new ResponseEntity(HttpStatus.OK);
     }
 }
