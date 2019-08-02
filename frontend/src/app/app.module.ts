@@ -33,13 +33,13 @@ import {OperatorComponent} from "./operator/OperatorComponent";
     OperatorComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatTableModule,
     MaterialModule,
     HttpClientModule,
-    MatSortModule
+    MatSortModule,
+    BrowserModule,
   ],
   exports: [
     MatTableModule
