@@ -1,32 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">MENU</a>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/home'">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+      </a>
+      <a *ngIf="authority === 'OPERATOR'" mat-button [routerLink]="'/test'"> Test </a>
+      <a *ngIf="authority === 'OPERATOR'" mat-button [routerLink]="'/operator'"> Candidates </a>
+      <a *ngIf="authority == 'ADMIN'" mat-button [routerLink]="'/createAccount'"> Create Operator </a>
+      <a *ngIf="authority == 'ADMIN'" mat-button [routerLink]="'/admin'"> Operators </a>
+      <a *ngIf="!authority"mat-button [routerLink]="'auth/login'"> Login </a>
+      <a *ngIf="authority"mat-button [routerLink]="'/settings'"> Settings </a>
     </div>
-    <ul class="nav navbar-nav" routerLinkActive="active">
-      <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
-      <li *ngIf="authority === 'OPERATOR'" class="nav-item">
-        <a class="nav-link" routerLink="test">Test</a>
-      </li>
-      <li *ngIf="authority === 'OPERATOR'" class="nav-item">
-        <a class="nav-link" routerLink="operator">Candidates</a>
-      </li>
-      <li *ngIf="authority == 'ADMIN'" class="nav-item">
-        <a class="nav-link" routerLink="admin">Operators</a>
-      </li>
-      <li *ngIf="authority == 'ADMIN'" class="nav-item">
-        <a class="nav-link" routerLink="createAccount">Create Operator</a>
-      </li>
-      <li *ngIf="authority" class="nav-item">
-        <a class="nav-link" routerLink="settings">Settings</a>
-      </li>
-      <li *ngIf="!authority" class="nav-item">
-        <a class="nav-link" routerLink="auth/login">Login</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+  </mat-toolbar-row>
+</mat-toolbar>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
