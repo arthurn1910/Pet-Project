@@ -1,5 +1,5 @@
 <div *ngIf="isSignedUp; else signupForm">
-  Your registration is successful. Please login!
+  Create operator is successful.
 </div>
 
 <ng-template #signupForm>
@@ -32,7 +32,7 @@
       <div class="form-group">
         <button class="btn btn-primary">Create operator</button>
         <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
-          Signup failed!<br/>{{errorMessage}}
+          Create operator failed!<br/>{{errorMessage}}
         </div>
       </div>
     </form>

@@ -1,6 +1,6 @@
 <div class="button-create-operator">
   <button mat-button>
-    <a href="createAccount" mat-menu-item>Add New Operator</a>
+    <a href="createCandidate" mat-menu-item>Add New Candidate</a>
   </button>
 </div>
 <div class="example-container mat-elevation-z8">
@@ -14,14 +14,19 @@
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="login">
-      <th mat-header-cell *matHeaderCellDef> Login</th>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email</th>
       <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
 
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> Action</th>
-      <button mat-button *matCellDef="let element" (click)="removeOperator(element.id)">Remove</button>
+      <button mat-button *matCellDef="let element" (click)="removeCandidate(element.id)">Remove</button>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

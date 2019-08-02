@@ -16,6 +16,8 @@ import {AccountComponent} from "./account/AccountComponent";
 import {TestComponent} from "./user/tests/TestComponent";
 import {MaterialModule} from "./MaterialModule";
 import {CreateOperatorComponent} from "./admin/operator/createOperatorComponent";
+import {CreateCandidateComponent} from "./operator/candidate/CreateCandidateComponent";
+import {OperatorComponent} from "./operator/OperatorComponent";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {CreateOperatorComponent} from "./admin/operator/createOperatorComponent"
     AdminComponent,
     AccountComponent,
     CreateOperatorComponent,
-    TestComponent
+    TestComponent,
+    CreateCandidateComponent,
+    OperatorComponent
   ],
   imports: [
     BrowserModule,

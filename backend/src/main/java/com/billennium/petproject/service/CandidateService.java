@@ -18,4 +18,6 @@ public interface CandidateService {
     List<CandidateEntity> getCandidatesByEmail(String email);
 
     List<CandidateEntity> getCandidatesByName(String name);
+
+    void removeCandidate(long parseLong);
 }

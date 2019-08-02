@@ -23,8 +23,6 @@ export class UserService {
   }
 
   removeOperator(id) {
-    this.http.delete(this.deleteOperatorUrl+id, id).subscribe(data =>
-      console.log("*****"), error => console.log("error!!!!!!", error)
-    )
+    return this.http.delete(this.deleteOperatorUrl + id, id);
   }
 }
