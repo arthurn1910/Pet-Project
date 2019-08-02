@@ -9,8 +9,11 @@
       <li *ngIf="authority === 'OPERATOR'" class="nav-item">
         <a class="nav-link" routerLink="test">Test</a>
       </li>
+      <li *ngIf="authority === 'OPERATOR'" class="nav-item">
+        <a class="nav-link" routerLink="operator">Candidates</a>
+      </li>
       <li *ngIf="authority == 'ADMIN'" class="nav-item">
-        <a class="nav-link" routerLink="admin">Admin Board</a>
+        <a class="nav-link" routerLink="admin">Operators</a>
       </li>
       <li *ngIf="authority == 'ADMIN'" class="nav-item">
         <a class="nav-link" routerLink="createAccount">Create Operator</a>

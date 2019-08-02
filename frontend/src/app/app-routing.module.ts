@@ -6,6 +6,8 @@ import {HomeComponent} from "./home/HomeComponent";
 import {AccountComponent} from "./account/AccountComponent";
 import {CreateOperatorComponent} from "./admin/operator/createOperatorComponent";
 import {TestComponent} from "./user/tests/TestComponent";
+import {OperatorComponent} from "./operator/OperatorComponent";
+import {CreateCandidateComponent} from "./operator/candidate/CreateCandidateComponent";
 
 const routes: Routes = [
   {
@@ -15,6 +17,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'operator',
+    component: OperatorComponent
   },
   {
     path: 'auth/login',
@@ -27,6 +33,10 @@ const routes: Routes = [
   {
     path: 'createAccount',
     component: CreateOperatorComponent
+  },
+  {
+    path: 'createCandidate',
+    component: CreateCandidateComponent
   },
   {
     path: 'test',

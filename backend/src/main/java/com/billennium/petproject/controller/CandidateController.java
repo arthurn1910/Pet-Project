@@ -2,19 +2,13 @@ package com.billennium.petproject.controller;
 
 import com.billennium.petproject.model.CandidateEntity;
 import com.billennium.petproject.service.CandidateService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static java.lang.Long.parseLong;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
 import static org.springframework.http.HttpStatus.OK;
 
@@ -63,5 +57,11 @@ public class CandidateController extends BaseController {
     public ResponseEntity candidatesByName(@PathVariable String name) {
         List<CandidateEntity> candidates = candidateService.getCandidatesByName(name);
         return new ResponseEntity(candidates, OK);
+    }
+
+    @DeleteMapping("remove/{id}")
+    public ResponseEntity removeCandidate(@PathVariable String id) {
+        candidateService.removeCandidate(parseLong(id));
+        return new ResponseEntity(HttpStatus.OK);
     }
 }

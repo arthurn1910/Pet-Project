@@ -1,20 +1,21 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import {UserService} from "../services/UserService";
+import {CandidateService} from "../services/CandidateService";
+
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './adminComponent.html',
-  styleUrls: ['./adminComponent.css']
+  selector: 'app-operator',
+  templateUrl: './operatorComponent.html',
+  styleUrls: ['./operatorComponent.css']
 })
-export class AdminComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'login', 'action'];
+export class OperatorComponent implements OnInit {
+  displayedColumns: string[] = ['id', 'name', 'email', 'action'];
   dataSource: MatTableDataSource<unknown> = new MatTableDataSource();
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private userService: UserService) {
+  constructor(private candidateService: CandidateService) {
   }
 
   ngOnInit() {
@@ -25,8 +26,8 @@ export class AdminComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  removeOperator(id: string) {
-    this.userService.removeOperator(id).subscribe(data => {
+  removeCandidate(id: string) {
+    this.candidateService.removeCandidate(id).subscribe(data => {
         this.refresh();
       },
       error => console.log(error)
@@ -34,7 +35,7 @@ export class AdminComponent implements OnInit {
   }
 
   refresh() {
-    this.userService.getOperators().subscribe(
+    this.candidateService.getCandidates().subscribe(
       data => {
         this.dataSource = new MatTableDataSource(data);
       }

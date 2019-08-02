@@ -70,4 +70,8 @@ public class CandidateServiceImpl implements CandidateService {
         return candidateRepository.findByFullNameContaining(name);
     }
 
+    @Override
+    public void removeCandidate(long id) {
+        candidateRepository.deleteById(id);
+    }
 }
